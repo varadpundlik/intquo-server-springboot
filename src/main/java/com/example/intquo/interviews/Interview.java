@@ -1,6 +1,7 @@
 package com.example.intquo.interviews;
 
 import com.example.intquo.questions.Question;
+import com.example.intquo.questions.QuestionService;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
@@ -135,6 +136,7 @@ public class Interview {
             for (Question q : questions) {
                 q.setCollege(this.college);
                 q.setCompany(this.company);
+                q.setAi_answer(new QuestionService().getAIAnswer(q.getQuestion()));
                 q.setInterview(this);  // important step!
             }
         }

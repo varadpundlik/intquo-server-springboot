@@ -11,12 +11,15 @@ public class Question {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Lob
     @Column(nullable = false)
     private String question;
 
+    @Lob
     @Column(nullable = false)
     private String user_answer;
 
+    @Lob
     @Column(nullable = false)
     private String ai_answer;
 
